@@ -5,20 +5,30 @@ Record your responses inside the fenced code blocks below each question.
 1.  Give an example of a visual hierarchy that could be modeled with components.
 
     ```md
-    <!-- your response here -->
+  componenets
+    years
+      months
+        componenet.js
+        template.hbs
+      weeks
+        component.js
+        template.hbs
+    component.js
+    template.hbs
+
     ```
 
 1.  What is the command to generate a new component called '`my-map`'?
 
     ```sh
-    # your response here
+ember generate componenet my-map
     ```
 
 1.  What files are edited to produce a component, and what are their
     responsibilities?
 
     ```md
-    <!-- your response here -->
+  when creating a component the template.hbs and the component.js are the files which get edited. template.hbs is what hold all the markup, and the componenet.js file is what holds any actions the component will handle. These actions can be anything from CRUS actions to haddling click handlers that will change the css.
     ```
 
 1.  Suppose you have a component '`my-contact`', which is loaded from
@@ -26,7 +36,7 @@ Record your responses inside the fenced code blocks below each question.
     the syntax for loading this component inside that template?
 
     ```html
-    <!-- your response here -->
+  <h3 class='contact-class'}>{{contact.title}}</h3>
     ```
 
     Each contact has multiple phone numbers. Suppose you also have '`my-phone`'
@@ -35,5 +45,7 @@ Record your responses inside the fenced code blocks below each question.
     pass it data?
 
     ```html
-    <!-- your response here -->
+    {{#each contact.phone as |phone|}}
+        {{my-phone/my-phone phone=phone}}
+      {{/each}
     ```
